@@ -4,10 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-//import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentManager;
+
 import androidx.lifecycle.Lifecycle;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -37,14 +36,9 @@ public class MainActivity extends FragmentActivity {
 class  CustomAdapder extends FragmentStateAdapter{
 
 
-//    public CustomAdapder(@NonNull FragmentManager fragmentManager) { //todo needs to fix problem
-//        super();
-//    }
-
-    public CustomAdapder(FragmentManager fragmentManager) {
-        super(fragmentManager);
+    public CustomAdapder(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+        super(fragmentManager, lifecycle);
     }
-
 
     @NonNull
     @Override
