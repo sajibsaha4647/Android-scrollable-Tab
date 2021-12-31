@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        CustomAdapder adapder = new CustomAdapder(fragmentManager);
+        CustomAdapder adapder = new CustomAdapder(fragmentManager,getLifecycle());
 
         viewPager.setAdapter(adapder);
 
@@ -48,10 +48,12 @@ class  CustomAdapder extends FragmentStateAdapter{
 
         if(position == 0){
             fragment = new FragmentTab1();
-        }else if(){
+        }else if(position == 1){
             fragment = new FragmentTab2();
-        }else if(){
+        }else if(position == 2){
             fragment = new FragmentTab3();
+        }else {
+            fragment = new FragmentTab1();
         }
 
         return fragment;
